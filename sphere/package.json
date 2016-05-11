@@ -1,0 +1,19 @@
+{
+  "name": "sphere",
+  "description": "Sphere Experiment by Luis Henrique Bizarro.",
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "budo": "^7.0.4",
+    "gsap": "^1.18.0",
+    "soundcloud-badge": "mattdesl/soundcloud-badge#feature/https-url",
+    "three": "^0.73.0",
+    "three-orbit-viewer": "^69.3.0",
+    "uglify-js": "^2.4.24",
+    "web-audio-analyser": "^2.0.1"
+  },
+  "scripts": {
+    "serve": "budo index.js:bundle.js --live -- -t babelify",
+    "build": "browserify index.js -t babelify | uglifyjs -cm > bundle.js"
+  }
+}

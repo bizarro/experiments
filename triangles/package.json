@@ -1,0 +1,10 @@
+{
+  "name": "triangles",
+  "description": "Triangles Experiment by Luis Henrique Bizarro.",
+  "devDependencies": {
+    "uglify-js": "^2.6.1"
+  },
+  "scripts": {
+    "build": " uglifyjs lib/processing/EffectComposer.js lib/processing/MaskPass.js lib/processing/RenderPass.js lib/processing/ShaderPass.js lib/shader/CopyShader.js lib/shader/DotScreenShader.js lib/shader/RGBShiftShader.js index.js -o bundle.js"
+  }
+}
