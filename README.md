@@ -9,9 +9,9 @@
   </tr>
   <tr>
     <td align="center">
-      <a href="https://lhbzr.com/experiments/particles">Launch Experiment</a> | <a href="/experiments/particles">Source Code</a>
+      <a href="https://lhbzr.com/experiments/particles">Launch Experiment</a> | <a href="/particles">Source Code</a>
     <td align="center">
-      <a href="https://lhbzr.com/experiments/deform">Launch Experiment</a> | <a href="/experiments/deform">Source Code</a>
+      <a href="https://lhbzr.com/experiments/deform">Launch Experiment</a> | <a href="/deform">Source Code</a>
     </td>
   </tr>
   <tr>
@@ -20,10 +20,10 @@
   </tr>
   <tr>
     <td align="center">
-      <a href="https://lhbzr.com/experiments/triangles">Launch Experiment</a> | <a href="/experiments/triangles">Source Code</a>
+      <a href="https://lhbzr.com/experiments/triangles">Launch Experiment</a> | <a href="/triangles">Source Code</a>
     </td>
     <td align="center">
-      <a href="https://lhbzr.com/experiments/sphere">Launch Experiment</a> | <a href="/experiments/sphere">Source Code</a>
+      <a href="https://lhbzr.com/experiments/sphere">Launch Experiment</a> | <a href="/sphere">Source Code</a>
     </td>
   </tr>
 </table>
