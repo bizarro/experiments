@@ -4,6 +4,8 @@ const THREE = require('three')
 const DatGUI = require('dat-gui')
 const Stats = require('stats-js')
 
+const glslify = require('glslify')
+
 const OrbitControls = require('three-orbit-controls')(THREE)
 
 class App {
@@ -17,6 +19,8 @@ class App {
     this.controls = null
 
     this.clock = new THREE.Clock({ autoStart: true })
+
+    this.mixer = null
 
     this.createRender()
     this.createScene()
@@ -76,7 +80,8 @@ class App {
     this.scene = new THREE.Scene()
 
     this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000)
-    this.camera.position.z = 30
+    this.camera.position.x = 100
+    this.camera.position.z = 100
 
     this.controls = new OrbitControls(this.camera, this.renderer.domElement)
   }
@@ -85,28 +90,37 @@ class App {
     this.light = new THREE.AmbientLight(0xFFFFFF)
 
     this.scene.add(this.light)
+
+    const lightOne = new THREE.DirectionalLight(0xefefff, 1.5)
+    lightOne.position.set(1, 1, 1).normalize()
+
+    var lightTwo = new THREE.DirectionalLight(0xffefef, 1.5)
+    lightTwo.position.set(-1, -1, -1).normalize()
+
+    this.scene.add(lightOne)
+    this.scene.add(lightTwo)
   }
 
   createGeometry () {
     const loader = new THREE.JSONLoader()
 
     loader.load('objects/fox.json', (geometry, materials) => {
-      const mesh = new THREE.Mesh(
-        geometry,
-        new THREE.MeshLambertMaterial({
-          vertexColors: THREE.FaceColors,
-          morphTargets: true
-        })
-      );
- 
-      mesh.scale.set(1.5, 1.5, 1.5)
+      const material = new THREE.MeshLambertMaterial({
+        // color: 0x00FFFF,
+        vertexColors: THREE.FaceColors,
+        morphTargets: true,
+        // wireframe: true
+      })
 
-      this.scene.add(mesh)
+      this.fox = new THREE.Mesh(geometry, material)
+      this.fox.position.y = -20
 
-      const mixer = new THREE.AnimationMixer(mesh)
       const clip = THREE.AnimationClip.CreateFromMorphTargetSequence('run', geometry.morphTargets, 30)
 
-      mixer.clipAction(clip).setDuration(1).play()
+      this.mixer = new THREE.AnimationMixer(this.fox)
+      this.mixer.clipAction(clip).setDuration(1).play()
+
+      this.scene.add(this.fox)
     })
   }
 
@@ -116,6 +130,10 @@ class App {
     this.renderer.render(this.scene, this.camera)
 
     this.controls.update()
+
+    if (this.mixer) {
+      this.mixer.update(this.clock.getDelta())
+    }
 
     this.stats.end()
 
