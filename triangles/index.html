@@ -35,9 +35,9 @@
     }
 
     .badge {
-      left: 0;
+      bottom: 10px;
+      left: 10px;
       position: absolute;
-      top: 0;
     }
 
     .soundcloud-link {
@@ -59,6 +59,13 @@
       margin-top: -4px;
       vertical-align: middle;
     }
+
+    @media (max-width: 800px) {
+      .soundcloud-link {
+        bottom: auto;
+        top: 20px;
+      }
+    }
   </style>
 
   <!-- Facebook -->
@@ -76,7 +83,7 @@
 <body>
   <!-- Chrome Experiments -->
   <a href="https://www.chromeexperiments.com/experiment/triangles" target="_blank" class="badge">
-    <img src="https://www.chromeexperiments.com/img/badges/b4.png" alt="See my Experiment on ChromeExperiments.com">
+    <img src="https://lhbzr.com/dist/img/logo/chrome-experiment.png" alt="See my Experiment on ChromeExperiments.com">
   </a>
 
   <!-- GSAP -->
