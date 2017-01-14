@@ -1,79 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Title -->
   <title>Triangles - LHBZR</title>
-
-  <!-- Description -->
   <meta name="description" content="Triangles Experiment by LHBZR.">
 
-  <!-- Charset -->
   <meta charset="utf-8">
-
-  <!-- Compatibility -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <!-- Viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Favicon -->
   <link rel="shortcut icon" href="../../favicon.png">
 
-  <!-- Style -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="stylesheet" href="stylesheet.css">
 
-    body {
-      cursor: pointer;
-    }
-
-    canvas {
-      display: block;
-    }
-
-    .badge {
-      bottom: 10px;
-      left: 10px;
-      position: absolute;
-    }
-
-    .soundcloud-link {
-      bottom: 20px;
-      color: #FFF;
-      display: block;
-      font: 12px 'Arial';
-      left: 0;
-      letter-spacing: 1px;
-      position: absolute;
-      text-align: center;
-      text-decoration: none;
-      width: 100%;
-    }
-
-    .soundcloud-img {
-      display: inline-block;
-      margin-right: 15px;
-      margin-top: -4px;
-      vertical-align: middle;
-    }
-
-    @media (max-width: 800px) {
-      .soundcloud-link {
-        bottom: auto;
-        top: 20px;
-      }
-    }
-  </style>
-
-  <!-- Facebook -->
   <meta property="og:title" content="Triangles - LHBZR">
   <meta property="og:image" content="../../share.jpg">
   <meta property="og:description" content="Triangles Experiment by LHBZR.">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@lhbzr">
   <meta name="twitter:title" content="LHBZR">
@@ -81,21 +24,20 @@
   <meta name="twitter:image:src" content="../../share.jpg">
 </head>
 <body>
-  <!-- Chrome Experiments -->
+  <a href="https://lhbzr.com/" target="_blank" class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.2 40.6" class="logo-image">
+      <path fill="none" d="M11.8,40.1H0.5V0.5 M17.5,0.5v39.6 M28.8,0.5v39.6 M34.4,0.5h2.8c4.7,0,8.5,3.8,8.5,8.5v0 c0,4.7-3.8,8.5-8.5,8.5H11.8h25.5c4.7,0,8.5,3.8,8.5,8.5v5.7c0,4.7-3.8,8.5-8.5,8.5h-2.8 M62.7,28.8v11.3H51.4v-9 c0-5.1,2-10,5.7-13.7l0,0c3.6-3.6,5.7-8.5,5.7-13.7V0.5H51.4 M68.4,0.5h2.8c4.7,0,8.5,3.8,8.5,8.5v0c0,4.7-3.8,8.5-8.5,8.5H48.7 h22.5c4.7,0,8.5,3.8,8.5,8.5v14.1">
+    </svg>
+  </a>
+
   <a href="https://www.chromeexperiments.com/experiment/triangles" target="_blank" class="badge">
     <img src="https://lhbzr.com/dist/img/logo/chrome-experiment.png" alt="See my Experiment on ChromeExperiments.com">
   </a>
 
-  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
-
-  <!-- THREE -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r73/three.min.js"></script>
-
-  <!-- Script -->
   <script src="bundle.js"></script>
 
-  <!-- Google Analytics -->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

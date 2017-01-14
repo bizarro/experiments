@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+.logo {
+  left: 10px;
+  position: absolute;
+  top: 10px;
+}
+
+.logo-image {
+  height: 36px;
+  stroke: #fff;
+}
+
+.soundcloud-link {
+  bottom: 20px;
+  color: #FFF;
+  display: block;
+  font: 100 13px 'Inconsolata';
+  left: 0;
+  letter-spacing: 0.1em;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.soundcloud-img {
+  display: inline-block;
+  margin-right: 15px;
+  margin-top: -4px;
+  vertical-align: middle;
+}

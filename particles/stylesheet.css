@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+.logo {
+  left: 10px;
+  position: absolute;
+  top: 10px;
+}
+
+.logo-image {
+  height: 36px;
+  stroke: #fff;
+}
