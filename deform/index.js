@@ -11,7 +11,7 @@ const OrbitControls = require('three-orbit-controls')(THREE)
 const glslify = require('glslify')
 
 const EffectComposer = require('three-effectcomposer')(THREE)
-const VignetteShader = require('./shaders/vignetteShader')
+const VignetteShader = require('./shaders/vignette')
 
 class App {
   constructor () {
@@ -46,6 +46,8 @@ class App {
     this.toggleDebug()
 
     this.update()
+
+    window.addEventListener('resize', this.resize.bind(this))
   }
 
   startGUI () {
@@ -121,8 +123,8 @@ class App {
     this.geometry = new THREE.IcosahedronGeometry(20, 4)
 
     this.material = new THREE.ShaderMaterial({
-      vertexShader: glslify('./shaders/vertexShader.glsl'),
-      fragmentShader: glslify('./shaders/fragmentShader.glsl'),
+      vertexShader: glslify('./shaders/vertex.glsl'),
+      fragmentShader: glslify('./shaders/fragment.glsl'),
       uniforms: {
         u_time: { type: 'f', value: 1.0 },
         u_resolution: { type: 'v2', value: {
@@ -177,9 +179,9 @@ class App {
         })
 
         const div = document.createElement('a')
-        const divImg = '<img src="https://developers.soundcloud.com/assets/logo_white.png" class="soundcloud-img">'
+        const divImg = '<img src="https://developers.soundcloud.com/assets/logo_white.png" class="soundcloud-image">'
 
-        div.className = 'soundcloud-link'
+        div.className = 'soundcloud'
         div.setAttribute('href', response.permalink_url)
         div.innerHTML = `${divImg} ${response.title} - ${response.user.username}`
 
@@ -234,8 +236,4 @@ class App {
   }
 }
 
-const app = new App()
-
-window.addEventListener('resize', () => {
-  app.resize()
-})
+new App()
