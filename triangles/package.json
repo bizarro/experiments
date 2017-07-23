@@ -5,6 +5,6 @@
     "uglify-js": "^2.6.1"
   },
   "scripts": {
-    "build": " uglifyjs processing/EffectComposer.js processing/MaskPass.js processing/RenderPass.js processing/ShaderPass.js shader/CopyShader.js shader/DotScreenShader.js shader/RGBShiftShader.js index.js -o bundle.js"
+    "build": " uglifyjs processing/*.js shaders/*.js index.js -c -m -o bundle.js"
   }
 }

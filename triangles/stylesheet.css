@@ -11,24 +11,13 @@ canvas {
   display: block;
 }
 
-.logo {
-  left: 10px;
-  position: absolute;
-  top: 10px;
-}
-
-.logo-image {
-  height: 36px;
-  stroke: #fff;
-}
-
 .badge {
   bottom: 10px;
   left: 10px;
   position: absolute;
 }
 
-.soundcloud-link {
+.soundcloud {
   bottom: 20px;
   color: #FFF;
   display: block;
@@ -42,16 +31,9 @@ canvas {
   width: 100%;
 }
 
-.soundcloud-img {
+.soundcloud-image {
   display: inline-block;
   margin-right: 15px;
   margin-top: -4px;
   vertical-align: middle;
-}
-
-@media (max-width: 800px) {
-  .soundcloud-link {
-    bottom: auto;
-    top: 20px;
-  }
 }

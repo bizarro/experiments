@@ -47,10 +47,10 @@
         })
 
         var music = document.createElement('a')
-        music.className = 'soundcloud-link'
+        music.className = 'soundcloud'
 
         music.setAttribute('href', information.permalink_url)
-        music.innerHTML = '<img src="https://developers.soundcloud.com/assets/logo_white.png" class="soundcloud-img">' + information.title + ' - ' + information.user.username
+        music.innerHTML = '<img src="https://developers.soundcloud.com/assets/logo_white.png" class="soundcloud-image">' + information.title + ' - ' + information.user.username
 
         document.body.appendChild(music)
       }
