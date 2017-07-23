@@ -1,7 +1,5 @@
 /* global requestAnimationFrame */
 
-require('gsap')
-
 const THREE = require('three')
 const dat = require('dat-gui')
 const Stats = require('stats-js')
@@ -14,7 +12,7 @@ class App {
   constructor () {
     this.uniforms = {
       alpha: 0.1,
-      color: '#2c00ff'
+      color: '#ff0000'
     }
 
     this.gui = null
@@ -94,7 +92,7 @@ class App {
     this.scene = new THREE.Scene()
 
     this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000)
-    this.camera.position.z = 12.5
+    this.camera.position.z = 30
 
     this.controls = new OrbitControls(this.camera, this.renderer.domElement)
   }
@@ -110,8 +108,8 @@ class App {
         color: { type: 'c', value: new THREE.Color(this.uniforms.color) },
         time: { type: 'f', value: 0 }
       },
-      fragmentShader: glslify('./shaders/particleFrag.glsl'),
-      vertexShader: glslify('./shaders/particleVert.glsl')
+      fragmentShader: glslify('./shaders/fragment.glsl'),
+      vertexShader: glslify('./shaders/vertex.glsl')
     })
 
     this.material = galaxyMaterial
