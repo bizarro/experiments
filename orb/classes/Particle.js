@@ -28,7 +28,7 @@ export default class Particle {
     context.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI)
     context.closePath()
 
-    context.fillStyle = '#f10071'
+    context.fillStyle = '#00ff48'
     context.fill()
 
     context.globalAlpha = 1

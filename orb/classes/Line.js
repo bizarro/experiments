@@ -50,7 +50,7 @@ export default class Line {
     this.update()
 
     context.strokeWidth = 1
-    context.strokeStyle = '#f10071'
+    context.strokeStyle = '#00ff48'
     context.globalAlpha = this.opacity
 
     context.beginPath()
