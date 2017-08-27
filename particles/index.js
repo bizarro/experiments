@@ -34,6 +34,10 @@ class App {
     this.toggleDebug()
 
     this.update()
+
+    window.addEventListener('resize', () => {
+      this.resize()
+    })
   }
 
   startGUI () {
@@ -41,14 +45,12 @@ class App {
 
     this.gui.domElement.style.display = 'none'
 
-    const _this = this
-
-    this.gui.add(this.uniforms, 'alpha', 0, 1).onChange(function () {
-      _this.galaxy.material.uniforms.alpha.value = _this.uniforms.alpha
+    this.gui.add(this.uniforms, 'alpha', 0, 1).onChange(() => {
+      this.galaxy.material.uniforms.alpha.value = _this.uniforms.alpha
     })
 
-    this.gui.addColor(this.uniforms, 'color').onChange(function () {
-      _this.galaxy.material.uniforms.color.value = new THREE.Color(_this.uniforms.color)
+    this.gui.addColor(this.uniforms, 'color').onChange(() => {
+      this.galaxy.material.uniforms.color.value = new THREE.Color(_this.uniforms.color)
     })
   }
 
@@ -100,25 +102,30 @@ class App {
   createGeometry () {
     this.group = new THREE.Object3D()
 
-    const galaxyMaterial = new THREE.ShaderMaterial({
+    this.material = new THREE.ShaderMaterial({
       blending: THREE.AdditiveBlending,
       transparent: true,
       uniforms: {
-        alpha: { type: 'f', value: this.uniforms.alpha },
-        color: { type: 'c', value: new THREE.Color(this.uniforms.color) },
-        time: { type: 'f', value: 0 }
+        alpha: {
+          type: 'f',
+          value: this.uniforms.alpha
+        },
+        color: {
+          type: 'c',
+          value: new THREE.Color(this.uniforms.color)
+        },
+        time: {
+          type: 'f',
+          value: 0
+        }
       },
       fragmentShader: glslify('./shaders/fragment.glsl'),
       vertexShader: glslify('./shaders/vertex.glsl')
     })
 
-    this.material = galaxyMaterial
+    this.geometry = new THREE.SphereGeometry(1, 500, 500)
 
-    const galaxyGeometry = new THREE.SphereGeometry(1, 500, 500)
-
-    this.geometry = galaxyGeometry
-
-    this.galaxy = new THREE.Points(galaxyGeometry, galaxyMaterial)
+    this.galaxy = new THREE.Points(this.geometry, this.material)
 
     this.scene.add(this.galaxy)
   }
@@ -147,7 +154,3 @@ class App {
 }
 
 const app = new App()
-
-window.addEventListener('resize', () => {
-  app.resize()
-})
